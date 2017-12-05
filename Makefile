@@ -1,6 +1,6 @@
 GPU=0
 CUDNN=0
-OPENCV=0
+OPENCV=1
 OPENMP=0
 DEBUG=0
 
@@ -19,11 +19,11 @@ ALIB=libdarknet.a
 EXEC=darknet
 OBJDIR=./obj/
 
-CC=gcc
+CC=gcc-7
 NVCC=nvcc 
 AR=ar
 ARFLAGS=rcs
-OPTS=-Ofast
+OPTS=-Ofast -march=native -mavx2
 LDFLAGS= -lm -pthread 
 COMMON= -Iinclude/ -Isrc/
 CFLAGS=-Wall -Wno-unknown-pragmas -Wfatal-errors -fPIC
